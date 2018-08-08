@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Index Page</title>
+    </head>
+    <body>
+        <h1>Login and Registration</h1>
+
+        <p>{{users}}</p>
+
+        <h2>Register</h2>
+        <form class="" action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="register">
+            <input type="text" name="name" placeholder="Name"><br>
+            <input type="text" name="alias" placeholder="Alias"><br>
+            <input type="text" name="email" placeholder="Email"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="password" name="confirm_pw" placeholder="Confirm Password"><br>
+            <input type="submit" name="" value="Register">
+        </form>
+
+        {% if messages %}
+          	{% for message in messages %}
+          		<p >{{ message }}</p>
+          	{% endfor %}
+        {% endif %}
+
+        <h2>Login</h2>
+        <form class="" action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="login">
+            <input type="text" name="email" placeholder="Email"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="submit" value="Login">
+        </form>
+        <br>
+        <a href="/clear"><button>Delete all users</button></a>
+    </body>
+</html>

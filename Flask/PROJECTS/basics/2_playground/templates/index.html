@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            margin: 0px auto;
+            height: 1200px;
+            width: 95%;
+        }
+        .box-holder {
+            width: 100%;
+            justify-content: space-around;
+
+        }
+        .blue-box {
+            display: inline-flex;
+
+            height: 300px;
+            width: 300px;
+            background-color: rgb(125, 173, 247) 
+        }
+        .change-color {
+            background-color: {{color}}; 
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div class="box-holder">
+        {% if num%}
+        {% for i in range(num) %}
+            <div class="blue-box change-color"></div>
+        {% endfor %}
+        {% endif %}
+        </div>
+    <div>
+        <p></p>
+</body>
+</html>

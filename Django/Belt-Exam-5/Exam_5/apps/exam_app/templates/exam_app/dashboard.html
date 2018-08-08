@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello {{request.session.name}}</h1>
+    <br>
+    <a href="/dashboard"></a>
+    <a href="/logout">logout</a>
+
+    <br>
+    <h3>People you may want to poke:</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Alias</th>{% comment %} Alias is username {% endcomment %}
+            <th>Email Address</th>
+            <th>Poke History</th>
+            <th>Action</th>
+        </tr>
+        {% for i in notfriends%}
+        <tr>
+            <td>{{i.name}}</td>
+            <td><a href="/show/{{i.id}}">{{ i.username}}</a></td>
+            <td>{{ i.email}}</td>
+            <td>{{i.poked}}</td>
+            <td><a href="/join/{{ i.id }}">Poke!</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

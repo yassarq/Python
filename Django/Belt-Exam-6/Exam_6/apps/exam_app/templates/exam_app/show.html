@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <a href="/success">Bright Ideas</a> <a href="/logout">Logout</a>
+    
+
+  
+  <h3>Name:{{i.name}}</h3>
+    <h4>Alias: {{i.alias}}</h4>
+    <h4>Email: {{i.email}}</h4>
+  
+    <h3>People who liked this post:</h3>
+    <table>
+        <tr>
+            <th>Total Number of Posts:</th>
+            <th>Total Number of Likes:</th>
+        </tr>
+        {% for i in creator %}
+        <tr>
+            <td>{{i.likedquote.count}}</td>
+            <td>{{i.uploadedquote.count}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  
+</body>
+</html>
+

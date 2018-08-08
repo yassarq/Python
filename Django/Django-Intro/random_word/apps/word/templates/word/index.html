@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px auto;
+        }
+        .code {
+            height: 100px;
+            width: 400px;
+            border: 2px solid black;
+        }
+        button {
+            height: 30px;
+            width: 100px;
+            border: 2px solid black;
+            margin-top: 15px;
+            background-color: white;
+            box-shadow: 0px 3px 3px 0px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <p>Random Word (attempt #{{count}})</p>
+    </center>
+
+    <center>
+        <div class="random">
+                <center><h3>{{random}}</h3></center>
+        </div>
+    </center>
+
+    <center>
+        <div class="generate">
+            <form action="/gen" method="post">
+                {% csrf_token %}
+                <input type="submit" id="button" value= " Refresh! ">
+            </form>
+        </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <style>
+        *{
+            margin: 0px auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id = container>
+        <div>
+            <form action='/process' method='post'>
+                {% csrf_token %}
+                <tr>
+                    <td>Your Name: <input type='text' name='name'></td><br>
+                    <td>Dojo Location:</td>
+                    <td>
+                        <select name="location">
+                            <option>Mountain View</option selected>
+                            <option>Tysons Corner</option>
+                        </select>
+                    </td><br>
+                    <td>Favorite Language:</td>
+                    <td>
+                        <select name="language">
+                            <option>Javascript</option selected>
+                            <option>Python</option>
+                        </select>
+                    </td><br>
+                    <td>Comment (option): <input type='textarea' name='comment2'></td><br>
+                    <input type='submit' value="submit">
+                </tr>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

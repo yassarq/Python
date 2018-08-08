@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        #type-quote {
+            align-items: flex-end;
+            justify-content: flex-end; 
+        }
+        .quote, .quotable{
+            border:1px solid black;
+            width:200px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>hello {{request.session.first_name}}</h1>
+    <br>
+    <a href="/dashboard">Home</a>
+    <a href="/logout">Logout</a>
+    <p>joins of user 1: {{joins_of_user1}}</p>
+    <p>joins of user 3: {{joins_of_user3}}</p>
+    <p>joins of user 5: {{joins_of_user5}}</p>
+    <br>
+    <div>
+        <h3>Quotable Quotes</h3>
+        <div>
+            {% for i in otherquotes %}
+            <div class='quote'>
+                <h3>{{i.author}}</h3>
+                <p>{{i.quote}}</p>
+                <p>Posted by:<a href="/show/{{ i.poster.id }}">{{i.poster.name}}</a></p>
+                <p><a href="/join/{{ i.id }}">Add to my favorite list</a></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div>
+        <h3>Your Favorites</h3>
+        <div>
+            {% for i in myquotes %}
+            <div class="quotable">
+                <h3>{{i.author}}</h3>
+                <p>{{i.quote}}</p>
+                <p>Posted by:<a href="/show/{{ i.poster.id }}">{{i.poster.name}}</a></p>
+                <p><a href="/remove/{{ i.id }}">remove</a></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="type-quote">
+        <h3>Contribute a Quote:</h3>
+        <div class="Contribute">
+            <form class="" action="/createitem" method="post">
+                {% csrf_token %}
+                <input type="text" name="quote_by" placeholder="Quoted By:">
+                <br>
+            <br>
+                <textarea rows="4" cols="50" name="message" placeholder="Quote here:"></textarea>
+                <input type="submit" name="" value="Submit">
+            </form>
+                {% if messages %}
+                    {% for message in messages %}
+                        <p >{{ message }}</p>
+                    {% endfor %}
+                {% endif %}    
+        </div>
+    </div>

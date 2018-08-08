@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Login/Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<center>
+<h1>Pokes Built in Python/Django</h1>
+<hr>
+<div class="errors" style="display:inline-block;color:red">
+		{% for error in errors %}
+			{{ error }}
+			<br>
+		{% endfor %}
+	</div>
+<div class="successes" style="display:inline-block;color:green">
+		{% for success in successes %}
+			{{ success}}
+			<br>
+		{% endfor %}
+</div>
+<h4>Register</h4>
+<form action="/register" method="post" class="form-control" style="width:300px; height:300px">
+	{%csrf_token %}
+	First Name: <input type="text" name="first_name" class="form-control">
+	Last Name: <input type="text" name="last_name" class="form-control">
+	Email: <input type="text" name="email"  class="form-control">
+	Password: <input type="password" name="password"  class="form-control">
+	<br>
+	<input type="submit" value="Register" class="btn btn-success">
+</form>
+<hr>
+<h4>Login</h4>
+<div class="log_errors" style="display:inline-block;color:red">
+		{% for log_error in log_errors %}
+			{{ log_error}}
+			<br>
+		{% endfor %}
+</div>
+<form action="/login" method="post" style="width:300px; height:175px" class="form-control">
+	{%csrf_token %}
+	Email: <input type="email" name="email" class="form-control">
+	Password: <input type="password" name="password" class="form-control">
+	<br>
+	<input type="submit" value="Login" class="btn btn-success">
+</form>
+</center>
+</div>
+</body>
+</html>

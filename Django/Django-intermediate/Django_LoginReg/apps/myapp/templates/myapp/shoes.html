@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Shoes</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+
+</head>
+<body>
+        <h1>Hi! {{request.session.name}}</h1><br>
+        <a href="/success">Dashboard</a>
+        <a href="/logout">logout</a>
+    <h1>Shoes</h1>
+    <h3>All Products</h3>
+    <p>{{ products }}</p>
+    <table>
+        <tr> 
+          <th>Product</th>
+          <th>Seller</th>
+          <th>Date Posted</th>
+          <th>Amount</th>
+          <th>Action</th>
+        </tr>
+        {% for i in products %}
+        <tr>
+          <td>{{ i.name }}</td>
+          <td>{{ i.seller_id }}</td>
+          <td>{{ i.created_at }}</td>
+          <td>${{ i.price }}</td>
+          <td><a href="/buy/{{ i.id }}">Buy</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

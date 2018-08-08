@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Session Words</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+    <!-- Optional theme --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<style>
+    #container{
+        display:flex;
+        justify-content:space-around;
+        margin-top:50px;
+    }
+    #form{
+        width:30%;
+    }
+    .form-group{
+        margin-bottom:30px;
+    }
+    #wordlist{
+        width:60%;
+    }
+    p{
+        font-size:30px;
+    }
+    .large{
+        font-size:50px;
+    }
+    .mini{
+        font-size:15px;
+    }
+    .red{
+        color:red;
+    }
+    .green{
+        color:green;
+    }
+    .blue{
+        color:blue;
+    }
+    .black{
+        color:black;
+    }
+
+</style>
+<body>
+    <div id='container'>
+        <div id='form'>
+            <form action='/add_word' method='post'>
+                {% csrf_token %}
+                <div class='form-group'>
+                    <label for='word'><h1>Add a new word</h1></label>
+                    <input type='text' class='form-control' id='word' name='word' value ='word'>
+                </div>
+                <h4>Please choose color</h4>
+                <div class='form-group'>
+                    <div class='form-check'>
+                        <input class='form-check-input' type='radio' name='color' id='color1' value='red'>
+                        <label class='form-check-label' for='color1'>
+                            Red
+                        </label>
+                    </div>
+                    <div class='form-check'>
+                        <input class='form-check-input' type='radio' name='color' id='color2' value='green'>
+                        <label class='form-check-label' for='color1'>
+                            Green
+                        </label>
+                    </div>
+                    <div class='form-check'>                
+                        <input class='form-check-input' type='radio' name='color' id='color3' value='blue'>
+                        <label class='form-check-label' for='color1'>
+                            Blue
+                        </label>
+                    </div>  
+                </div>
+                <div class='form-group'>         
+                    <div class='form-check'>
+                        <input class='form-check-input' type='checkbox' value='YES' id='check' name='isbig'>
+                        <label class='form-check-label' for='check'>
+                            Show in BIGGER font
+                        </label>                
+                    </div>
+                </div>
+                <button class='btn btn-primary' type='submit' value='add'>Add to session</button>
+            </form>
+        </div>
+        <div id='wordlist'>
+            <div>
+            <form action="/clear" method='post'>
+                {% csrf_token %}
+                <button class='btn btn-danger pull-right' type='submit' value='clear'>Clear session</button>
+            </form>
+            </div>
+            <br><br>
+            {% if wordlist %}
+            {% for x in wordlist %}
+                {% if x.isbig == 'YES' %}
+                    <p class='{{x.color}} large'>{{x.word}}     <span class='mini'> added on {{x.time}}</span></p>
+                {% else %}
+                    <p class='{{x.color}}'>{{x.word}}     <span class='mini'> added on {{x.time}}</span></p>
+                {% endif %}
+            {% endfor %}
+            {% else %}
+                <h1>NO WORDS YET</h1>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~
+$ cd
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~
+$
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~
+$ ls
+'='
+'3D Objects'/
+ AppData/
+'Application Data'@
+ cheese.txt
+ Contacts/
+ Cookies@
+ Desktop/
+ Documents/
+ Downloads/
+ drvlist.csv
+ Favorites/
+ filebackup.bat
+ Links/
+'Local Settings'@
+ MicrosoftEdgeBackups/
+ Music/
+'My Documents'@
+ NetHood@
+ NTUSER.DAT
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ NTUSER.DAT{75ca3b45-591a-11e8-b97a-d266c03e4303}.TM.blf
+ NTUSER.DAT{75ca3b45-591a-11e8-b97a-d266c03e4303}.TMContainer0000000000000000000                                                                                                                1.regtrans-ms
+ NTUSER.DAT{75ca3b45-591a-11e8-b97a-d266c03e4303}.TMContainer0000000000000000000                                                                                                                2.regtrans-ms
+ ntuser.ini
+ OneDrive/
+ Pictures/
+ PrintHood@
+ PycharmProjects/
+ Recent@
+'Saved Games'/
+ Searches/
+ SendTo@
+'Start Menu'@
+ subcounts.bat
+ task.txt
+ tasks.txt
+ Templates@
+ text.txt
+ userconf.bat
+ Videos/
+ windir.txt
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~
+$ cd desktop/coding_dojo/Python
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python
+$ cd myenvironment
+bash: cd: myenvironment: No such file or directory
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python
+$ ls
+myEnvironments/
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python
+$ cd myenvironments
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ source py3Env/Scripts/activate
+bash: py3Env/Scripts/activate: No such file or directory
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ source py3Env/bin/activate
+bash: py3Env/bin/activate: No such file or directory
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ python3 -V
+bash: python3: command not found
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ python -V
+Python 3.6.5
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip -V
+pip 9.0.3 from c:\users\yes_s\appdata\local\programs\python\python36\lib\site-pa                                                                                                                ckages (python 3.6)
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip list
+DEPRECATION: The default format will switch to columns in the future. You can us                                                                                                                e --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.con                                                                                                                f under the [list] section) to disable this warning.
+pip (9.0.3)
+setuptools (39.0.1)
+virtualenv (16.0.0)
+You are using pip version 9.0.3, however version 10.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' comm                                                                                                                and.
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ virtualenv py3Env
+Using base prefix 'c:\\users\\yes_s\\appdata\\local\\programs\\python\\python36'
+New python executable in C:\Users\yes_s\desktop\coding_dojo\Python\myenvironment                                                                                                                s\py3Env\Scripts\python.exe
+Installing setuptools, pip, wheel...done.
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ source py3Env/Scripts/activate
+(py3Env)
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ deactivate
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ source py3Env/Scripts/activate
+(py3Env)
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip install Django==1.11.9
+Collecting Django==1.11.9
+  Downloading https://files.pythonhosted.org/packages/c8/a6/291039f0ce4b9818e0399359866337e6dfe9c0e23d8d94f00e657edbfcd8/Django-1.11.9-py2.py3-none-any.whl (6.9MB)
+pip last
+Collecting pytz (from Django==1.11.9)
+  Downloading https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl (510kB)
+Installing collected packages: pytz, Django
+pip list
+deactivate
+pip3 list
+source myEnviornments/pySuccessfully installed Django-1.11.9 pytz-2018.4
+(py3Env)
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip last
+ERROR: unknown command "last" - maybe you meant "list"
+(py3Env)
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip list
+Package    Version
+---------- -------
+Django     1.11.9
+pip        10.0.1
+pytz       2018.4
+setuptools 39.2.0
+wheel      0.31.1
+(py3Env)
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ deactivate
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip3 list
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+pip (9.0.3)
+setuptools (39.0.1)
+virtualenv (16.0.0)
+You are using pip version 9.0.3, however version 10.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ source myEnviornments/python -m pip install --upgrade pip
+bash: myEnviornments/python: No such file or directory
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ source myEnviornments/py3Env/bin/activate
+bash: myEnviornments/py3Env/bin/activate: No such file or directory
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip freeze
+You are using pip version 9.0.3, however version 10.0.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+virtualenv==16.0.0
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ ^C
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ python -m pip install --upgrade pip
+Cache entry deserialization failed, entry ignored
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/0f/74/ecd13431bcc456ed390b44c8a6e917c1820365cbebcb6a8974d1cd045ab4/pip-10.0.1-py2.py3-none-any.whl (1.3MB)
+Installing collected packages: pip
+  Found existing installation: pip 9.0.3
+    Uninstalling pip-9.0.3:
+      Successfully uninstalled pip-9.0.3
+Successfully installed pip-10.0.1
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip install Django==1.11.9
+Collecting Django==1.11.9
+  Using cached https://files.pythonhosted.org/packages/c8/a6/291039f0ce4b9818e0399359866337e6dfe9c0e23d8d94f00e657edbfcd8/Django-1.11.9-py2.py3-none-any.whl
+pip list
+deactivateCollecting pytz (from Django==1.11.9)
+  Using cached https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl
+Installing collected packages: pytz, Django
+Successfully installed Django-1.11.9 pytz-2018.4
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip list
+Package    Version
+---------- -------
+Django     1.11.9
+pip        10.0.1
+pytz       2018.4
+setuptools 39.0.1
+virtualenv 16.0.0
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ deactivate
+bash: deactivate: command not found
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip3 list
+Package    Version
+---------- -------
+Django     1.11.9
+pip        10.0.1
+pytz       2018.4
+setuptools 39.0.1
+virtualenv 16.0.0
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ myEnviornments/py3Env/Scripts/activate
+bash: myEnviornments/py3Env/Scripts/activate: No such file or directory
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ pip freeze
+Django==1.11.9
+pytz==2018.4
+virtualenv==16.0.0
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/desktop/coding_dojo/Python/myenvironments
+$ cd ~/Desktop
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/Desktop
+$ pip freeze > requirements.txt
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/Desktop
+$ ls
+ 1341.pdf             CIS-1310/                                  'extra files'/           JavaPrograms/                          Python-bible/        test.js
+ About_My_Self.docx   Coding_DOJO/                                Firefox.lnk*           'Microsoft Edge.lnk'*                   python-class/        twitter.sqll
+ another.js          'ctrl s windows 10 - Google Search.html'     first.html             'NEM Wallet Key.wlt plus 2-factorial'   Quiz2-Practice.pdf  'Windows 10 Upgrade Assistant.lnk'*
+ Atom.lnk*           'ctrl s windows 10 - Google Search_files'/   Full_Stack/            'NEM Wallet.wlt'                        requirements.txt
+ babun.lnk*          'Desktop - Shortcut.lnk'*                    Java/                   Outline_Fusion.docx                    Screenshot.docx
+ CIS-1150/            desktop.ini                                 Java_Lab2_project.zip  'Prepware 2015.appref-ms'               screenshots/
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/Desktop
+$ pip uninstall Django
+Uninstalling Django-1.11.9:
+  Would remove:
+    c:\users\yes_s\appdata\local\programs\python\python36\lib\site-packages\django-1.11.9.dist-info\*
+    c:\users\yes_s\appdata\local\programs\python\python36\lib\site-packages\django\*
+    c:\users\yes_s\appdata\local\programs\python\python36\scripts\django-admin.exe
+    c:\users\yes_s\appdata\local\programs\python\python36\scripts\django-admin.py
+Proceed (y/n)? pip show Django
+Your response ('pip show django') was not one of the expected responses: y, n
+Proceed (y/n)? y
+  Successfully uninstalled Django-1.11.9
+
+yes_s@DESKTOP-D8CSBA0 MINGW64 ~/Desktop
+$ Åasc

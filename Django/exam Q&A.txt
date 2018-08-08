@@ -1,0 +1,1 @@
+Explain what session is, and why and when we use it.

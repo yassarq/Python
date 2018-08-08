@@ -1,0 +1,52 @@
+* {
+    /* background-color: lavender; */
+    margin: 0px auto;
+    font-family: sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* form {
+    display: flex;
+    align-content: center;
+} */
+
+p {
+    text-align: center;
+}
+
+#submit_button {
+    margin-left: 40px;
+}
+
+form {
+    margin-left: 480px;
+}
+
+h3 {
+    margin-top: 50px;
+    color: white;
+}
+
+
+
+.guess {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}

@@ -1,0 +1,20 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My First Template</title>
+    </head>
+    <body>
+        <h3>My first template with embedded python</h3>
+        <!-- this will output the value of our phrase variable -->
+        <p>Phrase: {{ phrase }}</p>
+        <!-- this will output the value of our times variable -->
+        <p>Times: {{ times }}</p>
+        <!-- here is an example of embedding a for-loop in our code -->
+        {% for x in range(0,times) %}
+            {% if x % 2 == 1 %}
+                <p>{{ phrase }}</p>
+            {% endif %}
+        {% endfor %}
+        <!-- here is an example of embedding an if statement in our code -->
+    </body>
+</html>

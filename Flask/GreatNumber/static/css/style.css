@@ -1,0 +1,33 @@
+* {
+    margin: 0px auto;
+    font-family: 
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* form {
+    display: flex;
+    justify-content: center;
+} */
+
+p {
+    text-align: center;
+}
+
+div {
+    
+}
+.color {
+    background-color: 
+}
+
+div {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+}
+form

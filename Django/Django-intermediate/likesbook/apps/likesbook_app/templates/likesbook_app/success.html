@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Success Page</title>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+    
+        </style>
+    </head>
+    <body>
+        <h1>Welcome {{request.session.name}}</h1>
+        <a href="/logout"><button>Logout</button></a>
+        <h2>Add a Book</h2>
+        <form class="" action="/processbook" method="post">
+            {% csrf_token %}
+            <input type = "hidden" name = "action" value = "addbook">
+            <input type = "text" name = "bookname" placeholder = "Book Name"><br>
+            <input type = "text" name = "description" placeholder = "Description"><br><br>
+            <input type = "submit" name = "" value = "Add a Book"><br><br>
+        </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p >{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        
+        <h3>All Books</h3>
+        <table>
+            <tr> 
+              <th>Books</th>
+              <th>Uploaded By</th>
+              <th>Liked by</th>
+              <th>Like a Book</th>
+            </tr>
+            {% for i in books %}
+            <tr>
+                
+              <td>{{ i.bookname }}</td>
+              <td>{{ i.uploaded_by.fname }} {{ i.uploaded_by.lname }}</td>
+              <td>{% for x in i.readers.all %}
+                {{x.fname}} {{x.lname}}
+                  {% endfor %}
+              </td>
+              <td><a href="/likedbook/{{ i.id }}">Like a Book</a></td>
+            </tr>
+            {% endfor %}
+    
+        </table>
+
+    </body>
+</html>

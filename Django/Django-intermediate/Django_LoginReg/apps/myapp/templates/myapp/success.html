@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Dash board</title>
+
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hi! {{request.session.name}}</h1>
+        <!-- <p>Id: {{request.session.id}}</p> -->
+        <br>
+        <a href="/shoes">go to all products</a>
+        <a href="/logout">logout</a>
+
+        <h2>Sell product</h2>
+
+        <form class="" action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="addproduct">
+            <input type="text" name="name" placeholder="name" id=""><br>
+            <input type="number" name="price" placeholder="price" id=""><br>
+            <input type="submit" name="" value="sell" id="">            
+        </form>
+        {% if messages %}
+            {% for message in messages %}
+                <p >{{ message }}</p>
+            {% endfor %}
+        {% endif %}    
+        <br>
+        <h3>Your products that are not yet sold</h3>
+        <p>{{ myproducts }}</p>
+        <table>
+            <tr> 
+              <th>product</th>
+              <th>Date Posted</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+            {% for i in myproducts %}
+            <tr>
+              <td>{{ i.name }}</td>
+              <td>{{ i.created_at }}</td>
+              <td>${{ i.price }}</td>
+              <td><a href="/remove/{{ i.id }}">Remove</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <h3>Sales</h3>
+        <table>
+            <tr> 
+              <th>product</th>
+              <th>Date Bought</th>
+              <th>Buyer</th>
+              <th>Amount</th>
+            </tr>
+            {% for i in sales %}
+            <tr>
+              <td>{{ i.sale }}</td>
+              <td>{{ i.created_at }}</td>
+              <td>{{ i.buyer.fname }} {{ i.buyer.lname }}</td>
+              <td>{{ i.sale.price }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>Total Sales: ${{ totalsales }}</p>
+        
+        <br>
+        <h3>Purchases</h3>
+        <table>
+            {% for i in purchases %}
+            <tr> 
+                <td>{{ i.sale.name }}</td>
+                <td>{{ i.created_at }}</td>
+                <td>{{ i.buyer.fname }} {{ i.sale.seller.lname }}</td>
+                <td>Seller</td>
+                <td>Amount</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>Total Purchases: ${{ totalpurchases }}</p>
+        
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Dojo Survey Index</title>
+        <!-- linking a css style sheet -->
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/dojo_survey.css')}}" />
+        <!-- linking a javascript file -->
+        <script type ="text/javascript" src="{{ url_for('static', filename='/js/dojo_survey.js') }}"></script>
+
+    </head>
+    <body>
+        <!-- form -->
+        <form action='/result' method='post'>
+            <!-- input types -->
+            <div>
+                <label for="name">Name:</label>
+                <input type='text' id='name' name='input'><br>
+            </div>
+            <div><h3>Dojo Location:</h3>
+                <select class="Favorite_language" id="location" name="location">
+                    <option value="Silicon Valley">Silicon Valley, CA</option>
+                    <option value="Seattle">Seattle, WA</option>
+                    <option value="Los Angeles">Los Angeles, CA</option>
+                    <option value="Dallas">Dallas, TX</option>
+                    <option value="Chicago">Chicago, IL</option>
+                    <option value="Tulsa">Tulsa, OK</option>
+                    <option value="Tysons Corner">Tysons Corner, VA</option>
+                    <option value="East Bay">East Bay, CA</option>
+                    <option value="San Jose" selected>San Jose, CA</option>
+                    <option value="Online">Online</option>
+                    <option value="International Students">International Students</option>
+                </select><br>
+            </div>
+            <div><h3>Favorite Language:</h3>
+                <select class="Favorite_language" id="language" name="language">
+                    <option value="Javascript">Javascript</option>
+                    <option value="Java">Java</option>
+                    <option value="Python" selected>Python</option>
+                    <option value="C++">C++</option>
+                    <option value="C#">C#</option>
+                </select><br>
+            </div>
+            <div>
+                <label for="comment">Comment (option):</label>
+                <textarea id='comment' name="user_comment"></textarea><br>
+            </div>
+            <button class="button">Button</button>
+        </form>
+    </body>
+</html>
